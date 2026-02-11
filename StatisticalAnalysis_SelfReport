@@ -4,6 +4,7 @@ library(readxl)
 library(dplyr)
 library(lmerTest)
 library(emmeans)
+library(sjPlot)
 Data_Testable <- read_delim("Data_Testable.csv", 
                             delim = ";", escape_double = FALSE, col_types = cols(Participant = col_integer(), 
                                                                                  TargetModality = col_factor(levels = c("Tactile", 
@@ -53,9 +54,37 @@ data_long <- data_combined_cal %>%
   pivot_longer(cols = c(Valence, Arousal), names_to = "DependentVar", values_to = "Score")
 
 
+#Can the modes Touch and Hearing modulate each others perceptive valence and arousal?
+#Visualize the measurements
 Data_Testable %>%
   group_by(TargetModality) %>%
   summarize(var(Arousal))
+
+#Tactile-only plot
+# ggplot(data_long %>% filter(TargetModality == "Tactile"), 
+#        aes(x = Modulator, y = Score, color = Modulator)) +
+#   geom_jitter(aes(group = Participant), width = 0.1, alpha = 0.5) +
+#   stat_summary(fun = mean, geom = "point", size = 3) +
+#   stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+#   facet_wrap(~DependentVar, scales = "free_y") +  # row per DV
+#   theme_minimal() +
+#   labs(x = "Modulator", y = "Score", color = "Modulator") +
+#   theme(strip.text = element_text(face = "bold"),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         legend.position = "bottom")
+
+# Acoustic-only plot
+ggplot(data_long %>% filter(TargetModality == "Acoustic"), 
+       aes(x = Modulator, y = Score, color = Modulator)) +
+  geom_jitter(aes(group = Participant), width = 0.1, alpha = 0.5) +
+  stat_summary(fun = mean, geom = "point", size = 3) +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  facet_wrap(~DependentVar, scales = "free_y") +
+  theme_minimal() +
+  labs(x = "Modulator", y = "Score", color = "Modulator") +
+  theme(strip.text = element_text(face = "bold"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "bottom")
 
 
 #----------NO CALIBRATION USED----------#
@@ -76,6 +105,7 @@ model_AcouArousal_NoCal <- lmer(
 anova(model_AcouArousal_NoCal, type = 3)
 summary(model_AcouArousal_NoCal)
 
+
 #------------------NOW FOR THE VALENCE------------------#
 
 #Test the effect of sound on Valence
@@ -93,7 +123,6 @@ model_AcouValence_NoCal <- lmer(
 )
 anova(model_AcouValence_NoCal, type = 3)
 summary(model_AcouValence_NoCal)
-
 
 
 
@@ -134,7 +163,7 @@ anova(model_mvb_AcousticVal, type = 3)
 summary(model_mvb_AcousticVal)
 
 
-#-------------------Estimated Marginal Means-------------------
+#Estimated Marginal Means
 model_emm_tact <- lmer (Valence ~Modulator + (1 | Participant), data = data_tactile_cal)
 emm_tact <- emmeans(model_emm_tact, ~ Modulator)
 
@@ -143,7 +172,9 @@ emm_acou <- emmeans(model_emm_acou, ~ Modulator)
 
 #Visualisation of Models
 plot(emm_tact)
+summary(emm_tact)
 plot(emm_acou)
+summary(emm_acou)
 
 ggplot(data_tactile_cal, aes(x = Modulator, y = Valence)) +
   geom_boxplot() +
@@ -156,3 +187,12 @@ ggplot(data_acoustic_cal, aes(x = Modulator, y = Valence)) +
   stat_summary(fun = mean, geom = "point", color = "red") +
   labs(title = "Valence per Modulator for Acoustic Targets",
        y = "Valence", x = "Tactile Modulator")
+
+tab_model(model_mvb_TactileVal, model_mvb_AcousticVal,
+          model_mvb_TactileArou, model_mvb_AcousticArou,
+          show.se = TRUE, show.stat = TRUE)
+
+tab_model(model_mvb_AcousticVal, file = "mvbTactileVal.doc")
+tab_model(model_mvb_AcousticVal, file = "mvbAcousticVal.doc")
+
+
