@@ -1,0 +1,158 @@
+library(tidyverse)
+library(ggplot2)
+library(readxl)
+library(dplyr)
+library(lmerTest)
+library(emmeans)
+Data_Testable <- read_delim("Data_Testable.csv", 
+                            delim = ";", escape_double = FALSE, col_types = cols(Participant = col_integer(), 
+                                                                                 TargetModality = col_factor(levels = c("Tactile", 
+                                                                                                                        "Acoustic")),
+                                                                                 Target = col_factor(levels = c("Leather", "Felt", "Aluminium", "Sandpaper",
+                                                                                                                "Wood", "Country Music7", "VideoGame3", 
+                                                                                                                "Knocking", "Bell4", "CarHorn")), 
+                                                                                 Modulator = col_factor(levels = c("Leather", 
+                                                                                                                   "Felt", "Aluminium", "Sandpaper", 
+                                                                                                                   "Wood", "Country Music7", "VideoGame3", 
+                                                                                                                   "Knocking", "Bell4", "CarHorn", "None")), 
+                                                                                 Valence = col_integer(), Arousal = col_integer()), 
+                            trim_ws = TRUE)
+
+#Uncalibrated sets
+
+data_acoustic <- Data_Testable %>%
+  filter(TargetModality == "Acoustic") %>%
+  mutate(Modulator = relevel(as.factor(Modulator), ref = "None"))
+
+data_tactile <- Data_Testable %>%
+  filter(TargetModality == "Tactile") %>%
+  mutate(Modulator = relevel(as.factor(Modulator), ref = "None"))
+
+
+#Calibrated sets
+data_acoustic_cal <- Data_Testable %>%
+  filter(TargetModality == "Acoustic",
+         Modulator %in% c("None",
+                          "Leather", 
+                          "Felt", "Aluminium",
+                          "Sandpaper", "Wood")) %>%
+  mutate(Modulator = droplevels(Modulator)) %>%
+  mutate(Modulator = relevel(Modulator, ref = "None"))
+
+data_tactile_cal <- Data_Testable %>%
+  filter(TargetModality == "Tactile",
+         Modulator %in% c("None",
+                          "Country Music7","VideoGame3",
+                          "Knocking","Bell4","CarHorn")) %>%
+  mutate(Modulator = droplevels(Modulator)) %>%
+  mutate(Modulator = relevel(Modulator, ref = "None"))
+
+data_combined_cal <- bind_rows(data_tactile_cal, data_acoustic_cal)
+summary(data_combined_cal)
+data_long <- data_combined_cal %>%
+  pivot_longer(cols = c(Valence, Arousal), names_to = "DependentVar", values_to = "Score")
+
+
+Data_Testable %>%
+  group_by(TargetModality) %>%
+  summarize(var(Arousal))
+
+
+#----------NO CALIBRATION USED----------#
+
+#Test the effect of sound on Arousal
+model_TactArousal_NoCal <- lmer(
+  Arousal ~ Modulator + (1|Participant),
+  data = data_tactile
+)
+anova(model_TactArousal_NoCal, type = 3)
+summary(model_TactArousal_NoCal)
+
+#Test the effect of touch on Arousal
+model_AcouArousal_NoCal <- lmer(
+  Arousal ~ Modulator + (1|Participant),
+  data = data_acoustic
+)
+anova(model_AcouArousal_NoCal, type = 3)
+summary(model_AcouArousal_NoCal)
+
+#------------------NOW FOR THE VALENCE------------------#
+
+#Test the effect of sound on Valence
+model_TactValence_NoCal <- lmer(
+  Valence ~ Modulator + (1|Participant),
+  data = data_tactile
+)
+anova(model_TactValence_NoCal, type = 3)
+summary(model_TactValence_NoCal)
+
+#Test the effect of touch on Valence
+model_AcouValence_NoCal <- lmer(
+  Valence ~ Modulator + (1|Participant),
+  data = data_acoustic
+)
+anova(model_AcouValence_NoCal, type = 3)
+summary(model_AcouValence_NoCal)
+
+
+
+
+#-------------------NOW ADD AROUSAL CALIBRATION-------------------
+model_mvb_TactileArou <- lmer(
+  Arousal ~ Modulator + (1 | Participant),
+  data = data_tactile_cal
+)
+
+anova(model_mvb_TactileArou, type = 3)
+summary(model_mvb_TactileArou)
+
+model_mvb_AcousticArou <- lmer(
+  Arousal ~ Modulator + (1 | Participant),
+  data = data_acoustic_cal
+)
+
+anova(model_mvb_AcousticArou, type = 3)
+summary(model_mvb_AcousticArou)
+
+
+
+#-------------------NOW ADD VALENCE CALIBRATION-------------------
+model_mvb_TactileVal <- lmer(
+  Valence ~ Modulator + (1 | Participant),
+  data = data_tactile_cal
+)
+
+anova(model_mvb_TactileVal, type = 3)
+summary(model_mvb_TactileVal)
+
+model_mvb_AcousticVal <- lmer(
+  Valence ~ Modulator + (1 | Participant),
+  data = data_acoustic_cal
+)
+
+anova(model_mvb_AcousticVal, type = 3)
+summary(model_mvb_AcousticVal)
+
+
+#-------------------Estimated Marginal Means-------------------
+model_emm_tact <- lmer (Valence ~Modulator + (1 | Participant), data = data_tactile_cal)
+emm_tact <- emmeans(model_emm_tact, ~ Modulator)
+
+model_emm_acou <- lmer (Valence ~Modulator + (1 | Participant), data = data_acoustic_cal)
+emm_acou <- emmeans(model_emm_acou, ~ Modulator)
+
+#Visualisation of Models
+plot(emm_tact)
+plot(emm_acou)
+
+ggplot(data_tactile_cal, aes(x = Modulator, y = Valence)) +
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", color = "red") +
+  labs(title = "Valence per Modulator for Tactile Targets",
+       y = "Valence", x = "Acoustic Modulator")
+
+ggplot(data_acoustic_cal, aes(x = Modulator, y = Valence)) +
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", color = "red") +
+  labs(title = "Valence per Modulator for Acoustic Targets",
+       y = "Valence", x = "Tactile Modulator")
