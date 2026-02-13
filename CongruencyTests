@@ -1,0 +1,148 @@
+library(tidyverse)
+library(lme4)
+library(lmerTest)
+library(emmeans)
+library(ggplot2)
+
+dat <- readr::read_delim(  "Data_Testable.csv",  delim = ";",  col_types = cols(  Participant = col_integer(),
+                                                                                  TargetModality = col_character(),
+                                                                                  Target = col_character(),
+                                                                                  Modulator = col_character(),
+                                                                                  Valence = col_double(),
+                                                                                  Arousal = col_double()
+                                                                                  )
+                                                                                )
+
+
+stopifnot(any(dat$Modulator == "None"))
+
+base_tbl <- dat %>%
+  filter(Modulator == "None") %>%
+  transmute(
+    Participant,
+    Modality = TargetModality,
+    Item = Target,
+    baseV = Valence,
+    baseA = Arousal
+  )
+
+base_tactile  <- base_tbl %>%
+  filter(Modality == "Tactile") %>%
+  select(Participant, TactileItem = Item, t_baseV = baseV, t_baseA = baseA)
+
+base_acoustic <- base_tbl %>%
+  filter(Modality == "Acoustic") %>%
+  select(Participant, AcousticItem = Item, a_baseV = baseV, a_baseA = baseA)
+
+
+mod_trials <- dat %>% filter(Modulator != "None")
+
+mod_tactile <- mod_trials %>%
+  filter(TargetModality == "Tactile") %>%
+  left_join(base_tactile, by = c("Participant", "Target" = "TactileItem")) %>%
+  left_join(base_acoustic, by = c("Participant", "Modulator" = "AcousticItem")) %>%
+  rename(target_baseV = t_baseV, target_baseA = t_baseA,
+         mod_baseV = a_baseV, mod_baseA = a_baseA)
+
+mod_acoustic <- mod_trials %>%
+  filter(TargetModality == "Acoustic") %>%
+  left_join(base_acoustic, by = c("Participant", "Target" = "AcousticItem")) %>%
+  left_join(base_tactile,  by = c("Participant", "Modulator" = "TactileItem")) %>%
+  rename(target_baseV = a_baseV, target_baseA = a_baseA,
+         mod_baseV = t_baseV, mod_baseA = t_baseA)
+
+mod_all <- bind_rows(mod_tactile, mod_acoustic)
+
+stopifnot(!any(is.na(mod_all$target_baseV)))
+stopifnot(!any(is.na(mod_all$mod_baseV)))
+
+mod_all <- mod_all %>%
+  mutate(
+    dValence = Valence - target_baseV,
+    dArousal = Arousal - target_baseA
+  )
+
+
+eps <- 0.01
+
+p_means <- base_tbl %>%
+  group_by(Participant, Modality) %>%
+  summarise(mean_baseV = mean(baseV, na.rm = TRUE), .groups = "drop")
+
+
+mod_all <- mod_all %>%
+  left_join(p_means, by = c("Participant", "TargetModality" = "Modality")) %>%
+  rename(p_mean_targetMod = mean_baseV) %>%
+  mutate(ModulatorModality = if_else(TargetModality == "Tactile", "Acoustic", "Tactile")) %>%
+  left_join(p_means, by = c("Participant", "ModulatorModality" = "Modality")) %>%
+  rename(p_mean_modMod = mean_baseV) %>%
+
+    mutate(
+    tgt_baseV_center = target_baseV - p_mean_targetMod,
+    mod_baseV_center = mod_baseV - p_mean_modMod,
+    tgt_sign = case_when(tgt_baseV_center >  eps ~  1,
+                         tgt_baseV_center < -eps ~ -1,
+                         TRUE ~ 0),
+    mod_sign = case_when(mod_baseV_center >  eps ~  1,
+                         mod_baseV_center < -eps ~ -1,
+                         TRUE ~ 0),
+    Congruency = case_when(
+      tgt_sign == 0 | mod_sign == 0            ~ "Neutral",
+      tgt_sign == mod_sign                     ~ "Congruent",
+      tgt_sign != mod_sign                     ~ "Incongruent"
+    ),
+    Congruency = factor(Congruency, levels = c("Incongruent","Neutral","Congruent"))
+  )
+
+
+mod_all <- mod_all %>%
+  group_by(Participant, TargetModality) %>%
+  mutate(
+    tgt_baseV_z = as.numeric(scale(target_baseV)),
+    mod_baseV_z = as.numeric(scale(mod_baseV))
+  ) %>% ungroup() %>%
+  mutate(congruency_index = tgt_baseV_z * mod_baseV_z)
+
+
+dat_bin <- mod_all %>% filter(Congruency != "Neutral") %>%
+  mutate(Congruency2 = droplevels(factor(Congruency, levels = c("Incongruent","Congruent"))))
+
+
+m_val <- lmer(
+  dValence ~ Congruency2 * TargetModality + 
+    I(abs(tgt_baseV_center - mod_baseV_center)) +
+    (1 | Participant) + (1 | Target) + (1 | Modulator),
+  data = dat_bin, REML = FALSE
+)
+summary(m_val)
+
+emm_val <- emmeans(m_val, ~ Congruency2 | TargetModality)
+pairs(emm_val, by = "TargetModality", adjust = "bonferroni")
+contrast(emmeans(m_val, ~ Congruency2), "revpairwise")
+
+
+m_ar  <- lmer(
+  dArousal ~ Congruency2 * TargetModality +
+    I(abs(tgt_baseV_center - mod_baseV_center)) +
+    (1 | Participant) + (1 | Target) + (1 | Modulator),
+  data = dat_bin, REML = FALSE
+)
+summary(m_ar)
+emm_ar <- emmeans(m_ar, ~ Congruency2 | TargetModality)
+pairs(emm_ar, by = "TargetModality", adjust = "bonferroni")
+
+
+m_val_cont <- lmer(
+  dValence ~ congruency_index * TargetModality +
+    (1 | Participant) + (1 | Target) + (1 | Modulator),
+  data = mod_all, REML = FALSE
+)
+summary(m_val_cont)
+
+m_ar_cont <- lmer(
+  dArousal ~ congruency_index * TargetModality +
+    (1 | Participant) + (1 | Target) + (1 | Modulator),
+  data = mod_all, REML = FALSE
+)
+summary(m_ar_cont)
+
