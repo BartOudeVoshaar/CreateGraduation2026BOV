@@ -1,0 +1,38 @@
+library(tidyverse)
+library(signal)
+library(pracma)
+library(writexl)
+
+data <- read.csv("E2_Wrangled.csv")
+
+fs <- 50.33  # Hz
+data <- data %>%
+  mutate(Timestamp = seq(0, by = 1/fs, length.out = nrow(data)))
+
+# low-pass Butterworth filter
+bf <- butter(2, 5/(fs/2), type = "low")
+data <- data %>%
+  mutate(SC_filtered = filtfilt(bf, SC_z))
+
+
+# detect possible peaks
+peaks <- findpeaks(data$SC_filtered,
+                   minpeakheight = 0.7,
+                   minpeakdistance = 10 * fs)
+
+
+
+peaks_df <- as.data.frame(peaks)
+colnames(peaks_df) <- c("Amplitude", "Index", "Start", "End")
+
+
+peaks_df <- peaks_df %>%
+  mutate(Timestamp = data$Timestamp[as.integer(Index)])
+
+write_xlsx(peaks_df, "E10_SCR_Peaks.xlsx")
+
+# visualise
+ggplot(data, aes(x = Timestamp, y = SC_filtered)) +
+  geom_line() +
+  geom_point(data = peaks_df, aes(x = Timestamp, y = Amplitude), color = "red") +
+  labs(title = "Detected SCR Peaks", y = "Skin Conductance (µS)", x = "Time (s)")
