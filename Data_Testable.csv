@@ -1,0 +1,601 @@
+Participant;TargetModality;Target;Modulator;Valence;Arousal
+1;Tactile;Leather;VideoGame3;9;4
+1;Tactile;Felt;Knocking;5;4
+1;Tactile;Aluminium;Bell4;9;2
+1;Tactile;Sandpaper;CarHorn;3;4
+1;Tactile;Wood;Country Music7;5;4
+1;Tactile;Leather;Knocking;9;1
+1;Tactile;Felt;Bell4;3;5
+1;Tactile;Aluminium;CarHorn;9;1
+1;Tactile;Sandpaper;Country Music7;2;6
+1;Tactile;Wood;VideoGame3;7;4
+1;Tactile;Leather;Bell4;10;6
+1;Tactile;Felt;CarHorn;3;6
+1;Tactile;Aluminium;Country Music7;8;3
+1;Tactile;Sandpaper;VideoGame3;2;7
+1;Tactile;Wood;Knocking;4;2
+1;Tactile;Leather;CarHorn;9;1
+1;Tactile;Felt;Country Music7;3;5
+1;Tactile;Aluminium;VideoGame3;7;2
+1;Tactile;Sandpaper;Knocking;1;5
+1;Tactile;Wood;Bell4;4;2
+1;Tactile;Leather;Country Music7;9;2
+1;Tactile;Felt;VideoGame3;3;6
+1;Tactile;Aluminium;Knocking;9;1
+1;Tactile;Sandpaper;Bell4;1;4
+1;Tactile;Wood;CarHorn;5;2
+2;Tactile;Leather;VideoGame3;6;6
+2;Tactile;Felt;Knocking;5;2
+2;Tactile;Aluminium;Bell4;6;6
+2;Tactile;Sandpaper;CarHorn;1;8
+2;Tactile;Wood;Country Music7;8;8
+2;Tactile;Leather;Knocking;6;7
+2;Tactile;Felt;Bell4;4;7
+2;Tactile;Aluminium;CarHorn;6;7
+2;Tactile;Sandpaper;Country Music7;7;8
+2;Tactile;Wood;VideoGame3;4;6
+2;Tactile;Leather;Bell4;6;5
+2;Tactile;Felt;CarHorn;2;8
+2;Tactile;Aluminium;Country Music7;7;6
+2;Tactile;Sandpaper;VideoGame3;5;4
+2;Tactile;Wood;Knocking;6;5
+2;Tactile;Leather;CarHorn;6;6
+2;Tactile;Felt;Country Music7;6;7
+2;Tactile;Aluminium;VideoGame3;6;5
+2;Tactile;Sandpaper;Knocking;2;7
+2;Tactile;Wood;Bell4;4;7
+2;Tactile;Leather;Country Music7;7;8
+2;Tactile;Felt;VideoGame3;6;5
+2;Tactile;Aluminium;Knocking;5;7
+2;Tactile;Sandpaper;Bell4;2;7
+2;Tactile;Wood;CarHorn;6;7
+3;Tactile;Leather;VideoGame3;5;6
+3;Tactile;Felt;Knocking;2;4
+3;Tactile;Aluminium;Bell4;6;4
+3;Tactile;Sandpaper;CarHorn;2;7
+3;Tactile;Wood;Country Music7;3;3
+3;Tactile;Leather;Knocking;4;6
+3;Tactile;Felt;Bell4;2;5
+3;Tactile;Aluminium;CarHorn;3;6
+3;Tactile;Sandpaper;Country Music7;2;6
+3;Tactile;Wood;VideoGame3;6;5
+3;Tactile;Leather;Bell4;6;2
+3;Tactile;Felt;CarHorn;3;6
+3;Tactile;Aluminium;Country Music7;5;3
+3;Tactile;Sandpaper;VideoGame3;3;6
+3;Tactile;Wood;Knocking;4;4
+3;Tactile;Leather;CarHorn;6;3
+3;Tactile;Felt;Country Music7;4;5
+3;Tactile;Aluminium;VideoGame3;4;6
+3;Tactile;Sandpaper;Knocking;2;6
+3;Tactile;Wood;Bell4;4;5
+3;Tactile;Leather;Country Music7;4;6
+3;Tactile;Felt;VideoGame3;3;5
+3;Tactile;Aluminium;Knocking;4;4
+3;Tactile;Sandpaper;Bell4;2;6
+3;Tactile;Wood;CarHorn;4;4
+4;Tactile;Leather;VideoGame3;7;7
+4;Tactile;Felt;Knocking;3;7
+4;Tactile;Aluminium;Bell4;6;6
+4;Tactile;Sandpaper;CarHorn;4;5
+4;Tactile;Wood;Country Music7;7;7
+4;Tactile;Leather;Knocking;7;7
+4;Tactile;Felt;Bell4;5;6
+4;Tactile;Aluminium;CarHorn;7;7
+4;Tactile;Sandpaper;Country Music7;3;7
+4;Tactile;Wood;VideoGame3;8;7
+4;Tactile;Leather;Bell4;7;6
+4;Tactile;Felt;CarHorn;5;6
+4;Tactile;Aluminium;Country Music7;7;7
+4;Tactile;Sandpaper;VideoGame3;3;8
+4;Tactile;Wood;Knocking;8;7
+4;Tactile;Leather;CarHorn;7;6
+4;Tactile;Felt;Country Music7;5;6
+4;Tactile;Aluminium;VideoGame3;6;4
+4;Tactile;Sandpaper;Knocking;4;6
+4;Tactile;Wood;Bell4;8;7
+4;Tactile;Leather;Country Music7;7;7
+4;Tactile;Felt;VideoGame3;5;6
+4;Tactile;Aluminium;Knocking;7;7
+4;Tactile;Sandpaper;Bell4;4;7
+4;Tactile;Wood;CarHorn;8;6
+5;Tactile;Leather;VideoGame3;7;7
+5;Tactile;Felt;Knocking;8;5
+5;Tactile;Aluminium;Bell4;5;5
+5;Tactile;Sandpaper;CarHorn;7;4
+5;Tactile;Wood;Country Music7;6;5
+5;Tactile;Leather;Knocking;4;7
+5;Tactile;Felt;Bell4;6;5
+5;Tactile;Aluminium;CarHorn;7;3
+5;Tactile;Sandpaper;Country Music7;7;4
+5;Tactile;Wood;VideoGame3;7;5
+5;Tactile;Leather;Bell4;6;5
+5;Tactile;Felt;CarHorn;4;6
+5;Tactile;Aluminium;Country Music7;7;6
+5;Tactile;Sandpaper;VideoGame3;5;6
+5;Tactile;Wood;Knocking;7;5
+5;Tactile;Leather;CarHorn;3;7
+5;Tactile;Felt;Country Music7;4;6
+5;Tactile;Aluminium;VideoGame3;8;6
+5;Tactile;Sandpaper;Knocking;4;7
+5;Tactile;Wood;Bell4;6;4
+5;Tactile;Leather;Country Music7;7;7
+5;Tactile;Felt;VideoGame3;7;7
+5;Tactile;Aluminium;Knocking;8;6
+5;Tactile;Sandpaper;Bell4;1;10
+5;Tactile;Wood;CarHorn;6;3
+6;Tactile;Leather;VideoGame3;6;5
+6;Tactile;Felt;Knocking;5;6
+6;Tactile;Aluminium;Bell4;6;5
+6;Tactile;Sandpaper;CarHorn;2;8
+6;Tactile;Wood;Country Music7;6;5
+6;Tactile;Leather;Knocking;6;5
+6;Tactile;Felt;Bell4;4;5
+6;Tactile;Aluminium;CarHorn;6;4
+6;Tactile;Sandpaper;Country Music7;3;7
+6;Tactile;Wood;VideoGame3;4;4
+6;Tactile;Leather;Bell4;6;4
+6;Tactile;Felt;CarHorn;4;6
+6;Tactile;Aluminium;Country Music7;5;4
+6;Tactile;Sandpaper;VideoGame3;2;7
+6;Tactile;Wood;Knocking;4;4
+6;Tactile;Leather;CarHorn;6;4
+6;Tactile;Felt;Country Music7;4;6
+6;Tactile;Aluminium;VideoGame3;5;5
+6;Tactile;Sandpaper;Knocking;3;7
+6;Tactile;Wood;Bell4;4;4
+6;Tactile;Leather;Country Music7;5;4
+6;Tactile;Felt;VideoGame3;4;6
+6;Tactile;Aluminium;Knocking;4;4
+6;Tactile;Sandpaper;Bell4;2;8
+6;Tactile;Wood;CarHorn;4;5
+7;Tactile;Leather;VideoGame3;5;4
+7;Tactile;Felt;Knocking;6;5
+7;Tactile;Aluminium;Bell4;6;3
+7;Tactile;Sandpaper;CarHorn;3;6
+7;Tactile;Wood;Country Music7;6;2
+7;Tactile;Leather;Knocking;6;2
+7;Tactile;Felt;Bell4;7;4
+7;Tactile;Aluminium;CarHorn;6;2
+7;Tactile;Sandpaper;Country Music7;3;5
+7;Tactile;Wood;VideoGame3;5;2
+7;Tactile;Leather;Bell4;6;2
+7;Tactile;Felt;CarHorn;4;5
+7;Tactile;Aluminium;Country Music7;5;2
+7;Tactile;Sandpaper;VideoGame3;3;6
+7;Tactile;Wood;Knocking;6;2
+7;Tactile;Leather;CarHorn;5;2
+7;Tactile;Felt;Country Music7;2;5
+7;Tactile;Aluminium;VideoGame3;4;3
+7;Tactile;Sandpaper;Knocking;2;5
+7;Tactile;Wood;Bell4;5;2
+7;Tactile;Leather;Country Music7;6;2
+7;Tactile;Felt;VideoGame3;5;5
+7;Tactile;Aluminium;Knocking;5;3
+7;Tactile;Sandpaper;Bell4;3;5
+7;Tactile;Wood;CarHorn;5;2
+8;Tactile;Leather;VideoGame3;7;3
+8;Tactile;Felt;Knocking;7;6
+8;Tactile;Aluminium;Bell4;7;5
+8;Tactile;Sandpaper;CarHorn;5;6
+8;Tactile;Wood;Country Music7;7;7
+8;Tactile;Leather;Knocking;6;6
+8;Tactile;Felt;Bell4;6;7
+8;Tactile;Aluminium;CarHorn;8;6
+8;Tactile;Sandpaper;Country Music7;5;7
+8;Tactile;Wood;VideoGame3;7;7
+8;Tactile;Leather;Bell4;8;7
+8;Tactile;Felt;CarHorn;6;5
+8;Tactile;Aluminium;Country Music7;7;5
+8;Tactile;Sandpaper;VideoGame3;3;8
+8;Tactile;Wood;Knocking;6;7
+8;Tactile;Leather;CarHorn;6;5
+8;Tactile;Felt;Country Music7;6;6
+8;Tactile;Aluminium;VideoGame3;7;6
+8;Tactile;Sandpaper;Knocking;2;9
+8;Tactile;Wood;Bell4;7;7
+8;Tactile;Leather;Country Music7;8;6
+8;Tactile;Felt;VideoGame3;5;6
+8;Tactile;Aluminium;Knocking;7;8
+8;Tactile;Sandpaper;Bell4;4;8
+8;Tactile;Wood;CarHorn;6;7
+9;Tactile;Leather;VideoGame3;7;4
+9;Tactile;Felt;Knocking;6;4
+9;Tactile;Aluminium;Bell4;8;7
+9;Tactile;Sandpaper;CarHorn;3;4
+9;Tactile;Wood;Country Music7;9;7
+9;Tactile;Leather;Knocking;7;6
+9;Tactile;Felt;Bell4;6;6
+9;Tactile;Aluminium;CarHorn;8;4
+9;Tactile;Sandpaper;Country Music7;4;5
+9;Tactile;Wood;VideoGame3;7;5
+9;Tactile;Leather;Bell4;8;9
+9;Tactile;Felt;CarHorn;6;4
+9;Tactile;Aluminium;Country Music7;7;8
+9;Tactile;Sandpaper;VideoGame3;3;8
+9;Tactile;Wood;Knocking;7;6
+9;Tactile;Leather;CarHorn;7;6
+9;Tactile;Felt;Country Music7;6;5
+9;Tactile;Aluminium;VideoGame3;8;7
+9;Tactile;Sandpaper;Knocking;3;7
+9;Tactile;Wood;Bell4;5;5
+9;Tactile;Leather;Country Music7;7;6
+9;Tactile;Felt;VideoGame3;7;4
+9;Tactile;Aluminium;Knocking;6;5
+9;Tactile;Sandpaper;Bell4;3;7
+9;Tactile;Wood;CarHorn;7;4
+10;Tactile;Leather;VideoGame3;5;7
+10;Tactile;Felt;Knocking;5;4
+10;Tactile;Aluminium;Bell4;5;6
+10;Tactile;Sandpaper;CarHorn;2;7
+10;Tactile;Wood;Country Music7;4;4
+10;Tactile;Leather;Knocking;6;4
+10;Tactile;Felt;Bell4;5;6
+10;Tactile;Aluminium;CarHorn;6;6
+10;Tactile;Sandpaper;Country Music7;2;8
+10;Tactile;Wood;VideoGame3;6;5
+10;Tactile;Leather;Bell4;4;5
+10;Tactile;Felt;CarHorn;4;6
+10;Tactile;Aluminium;Country Music7;4;6
+10;Tactile;Sandpaper;VideoGame3;1;8
+10;Tactile;Wood;Knocking;5;5
+10;Tactile;Leather;CarHorn;6;4
+10;Tactile;Felt;Country Music7;6;5
+10;Tactile;Aluminium;VideoGame3;4;6
+10;Tactile;Sandpaper;Knocking;1;8
+10;Tactile;Wood;Bell4;5;3
+10;Tactile;Leather;Country Music7;5;3
+10;Tactile;Felt;VideoGame3;4;5
+10;Tactile;Aluminium;Knocking;5;4
+10;Tactile;Sandpaper;Bell4;2;7
+10;Tactile;Wood;CarHorn;5;3
+1;Acoustic;VideoGame3;Leather;5;5
+1;Acoustic;Knocking;Felt;6;4
+1;Acoustic;Bell4;Aluminium;7;8
+1;Acoustic;CarHorn;Sandpaper;1;8
+1;Acoustic;Country Music7;Wood;9;8
+1;Acoustic;Knocking;Leather;7;2
+1;Acoustic;Bell4;Felt;6;6
+1;Acoustic;CarHorn;Aluminium;1;9
+1;Acoustic;Country Music7;Sandpaper;6;7
+1;Acoustic;VideoGame3;Wood;7;7
+1;Acoustic;Bell4;Leather;6;6
+1;Acoustic;CarHorn;Felt;2;7
+1;Acoustic;Country Music7;Aluminium;8;8
+1;Acoustic;VideoGame3;Sandpaper;4;3
+1;Acoustic;Knocking;Wood;6;2
+1;Acoustic;CarHorn;Leather;2;8
+1;Acoustic;Country Music7;Felt;7;5
+1;Acoustic;VideoGame3;Aluminium;6;7
+1;Acoustic;Knocking;Sandpaper;6;2
+1;Acoustic;Bell4;Wood;6;3
+1;Acoustic;Country Music7;Leather;9;9
+1;Acoustic;VideoGame3;Felt;6;4
+1;Acoustic;Knocking;Aluminium;8;3
+1;Acoustic;Bell4;Sandpaper;6;5
+1;Acoustic;CarHorn;Wood;2;8
+2;Acoustic;VideoGame3;Leather;3;7
+2;Acoustic;Knocking;Felt;4;5
+2;Acoustic;Bell4;Aluminium;4;6
+2;Acoustic;CarHorn;Sandpaper;2;8
+2;Acoustic;Country Music7;Wood;8;9
+2;Acoustic;Knocking;Leather;5;4
+2;Acoustic;Bell4;Felt;3;8
+2;Acoustic;CarHorn;Aluminium;2;8
+2;Acoustic;Country Music7;Sandpaper;7;8
+2;Acoustic;VideoGame3;Wood;5;5
+2;Acoustic;Bell4;Leather;5;6
+2;Acoustic;CarHorn;Felt;1;8
+2;Acoustic;Country Music7;Aluminium;8;8
+2;Acoustic;VideoGame3;Sandpaper;4;6
+2;Acoustic;Knocking;Wood;5;6
+2;Acoustic;CarHorn;Leather;5;6
+2;Acoustic;Country Music7;Felt;8;6
+2;Acoustic;VideoGame3;Aluminium;6;6
+2;Acoustic;Knocking;Sandpaper;5;5
+2;Acoustic;Bell4;Wood;5;6
+2;Acoustic;Country Music7;Leather;7;8
+2;Acoustic;VideoGame3;Felt;5;6
+2;Acoustic;Knocking;Aluminium;6;6
+2;Acoustic;Bell4;Sandpaper;4;7
+2;Acoustic;CarHorn;Wood;3;7
+3;Acoustic;VideoGame3;Leather;4;7
+3;Acoustic;Knocking;Felt;3;7
+3;Acoustic;Bell4;Aluminium;5;3
+3;Acoustic;CarHorn;Sandpaper;2;8
+3;Acoustic;Country Music7;Wood;8;8
+3;Acoustic;Knocking;Leather;2;6
+3;Acoustic;Bell4;Felt;5;3
+3;Acoustic;CarHorn;Aluminium;3;7
+3;Acoustic;Country Music7;Sandpaper;7;5
+3;Acoustic;VideoGame3;Wood;3;5
+3;Acoustic;Bell4;Leather;3;6
+3;Acoustic;CarHorn;Felt;2;7
+3;Acoustic;Country Music7;Aluminium;7;6
+3;Acoustic;VideoGame3;Sandpaper;3;5
+3;Acoustic;Knocking;Wood;2;6
+3;Acoustic;CarHorn;Leather;2;6
+3;Acoustic;Country Music7;Felt;7;6
+3;Acoustic;VideoGame3;Aluminium;4;5
+3;Acoustic;Knocking;Sandpaper;2;7
+3;Acoustic;Bell4;Wood;3;6
+3;Acoustic;Country Music7;Leather;7;6
+3;Acoustic;VideoGame3;Felt;5;5
+3;Acoustic;Knocking;Aluminium;2;6
+3;Acoustic;Bell4;Sandpaper;5;3
+3;Acoustic;CarHorn;Wood;3;6
+4;Acoustic;VideoGame3;Leather;4;6
+4;Acoustic;Knocking;Felt;5;5
+4;Acoustic;Bell4;Aluminium;5;7
+4;Acoustic;CarHorn;Sandpaper;3;7
+4;Acoustic;Country Music7;Wood;8;7
+4;Acoustic;Knocking;Leather;6;6
+4;Acoustic;Bell4;Felt;5;5
+4;Acoustic;CarHorn;Aluminium;2;7
+4;Acoustic;Country Music7;Sandpaper;7;6
+4;Acoustic;VideoGame3;Wood;4;6
+4;Acoustic;Bell4;Leather;6;7
+4;Acoustic;CarHorn;Felt;4;6
+4;Acoustic;Country Music7;Aluminium;7;7
+4;Acoustic;VideoGame3;Sandpaper;4;6
+4;Acoustic;Knocking;Wood;7;6
+4;Acoustic;CarHorn;Leather;2;7
+4;Acoustic;Country Music7;Felt;8;8
+4;Acoustic;VideoGame3;Aluminium;3;7
+4;Acoustic;Knocking;Sandpaper;6;5
+4;Acoustic;Bell4;Wood;7;8
+4;Acoustic;Country Music7;Leather;8;7
+4;Acoustic;VideoGame3;Felt;4;6
+4;Acoustic;Knocking;Aluminium;6;5
+4;Acoustic;Bell4;Sandpaper;8;7
+4;Acoustic;CarHorn;Wood;2;7
+5;Acoustic;VideoGame3;Leather;7;6
+5;Acoustic;Knocking;Felt;6;6
+5;Acoustic;Bell4;Aluminium;3;6
+5;Acoustic;CarHorn;Sandpaper;3;6
+5;Acoustic;Country Music7;Wood;6;6
+5;Acoustic;Knocking;Leather;5;5
+5;Acoustic;Bell4;Felt;5;4
+5;Acoustic;CarHorn;Aluminium;2;8
+5;Acoustic;Country Music7;Sandpaper;6;7
+5;Acoustic;VideoGame3;Wood;4;4
+5;Acoustic;Bell4;Leather;5;2
+5;Acoustic;CarHorn;Felt;3;8
+5;Acoustic;Country Music7;Aluminium;8;7
+5;Acoustic;VideoGame3;Sandpaper;4;5
+5;Acoustic;Knocking;Wood;5;4
+5;Acoustic;CarHorn;Leather;2;8
+5;Acoustic;Country Music7;Felt;7;6
+5;Acoustic;VideoGame3;Aluminium;7;5
+5;Acoustic;Knocking;Sandpaper;4;6
+5;Acoustic;Bell4;Wood;4;4
+5;Acoustic;Country Music7;Leather;7;7
+5;Acoustic;VideoGame3;Felt;6;5
+5;Acoustic;Knocking;Aluminium;6;6
+5;Acoustic;Bell4;Sandpaper;2;8
+5;Acoustic;CarHorn;Wood;3;6
+6;Acoustic;VideoGame3;Leather;4;6
+6;Acoustic;Knocking;Felt;4;5
+6;Acoustic;Bell4;Aluminium;4;7
+6;Acoustic;CarHorn;Sandpaper;1;8
+6;Acoustic;Country Music7;Wood;7;7
+6;Acoustic;Knocking;Leather;4;6
+6;Acoustic;Bell4;Felt;4;6
+6;Acoustic;CarHorn;Aluminium;2;8
+6;Acoustic;Country Music7;Sandpaper;7;7
+6;Acoustic;VideoGame3;Wood;4;6
+6;Acoustic;Bell4;Leather;4;7
+6;Acoustic;CarHorn;Felt;2;9
+6;Acoustic;Country Music7;Aluminium;7;6
+6;Acoustic;VideoGame3;Sandpaper;3;7
+6;Acoustic;Knocking;Wood;4;6
+6;Acoustic;CarHorn;Leather;2;9
+6;Acoustic;Country Music7;Felt;6;6
+6;Acoustic;VideoGame3;Aluminium;5;6
+6;Acoustic;Knocking;Sandpaper;4;6
+6;Acoustic;Bell4;Wood;4;7
+6;Acoustic;Country Music7;Leather;6;6
+6;Acoustic;VideoGame3;Felt;3;7
+6;Acoustic;Knocking;Aluminium;4;6
+6;Acoustic;Bell4;Sandpaper;2;8
+6;Acoustic;CarHorn;Wood;2;8
+7;Acoustic;VideoGame3;Leather;4;5
+7;Acoustic;Knocking;Felt;4;4
+7;Acoustic;Bell4;Aluminium;6;4
+7;Acoustic;CarHorn;Sandpaper;2;6
+7;Acoustic;Country Music7;Wood;7;4
+7;Acoustic;Knocking;Leather;4;5
+7;Acoustic;Bell4;Felt;5;6
+7;Acoustic;CarHorn;Aluminium;2;6
+7;Acoustic;Country Music7;Sandpaper;6;4
+7;Acoustic;VideoGame3;Wood;5;4
+7;Acoustic;Bell4;Leather;5;5
+7;Acoustic;CarHorn;Felt;2;6
+7;Acoustic;Country Music7;Aluminium;6;5
+7;Acoustic;VideoGame3;Sandpaper;4;5
+7;Acoustic;Knocking;Wood;5;3
+7;Acoustic;CarHorn;Leather;3;6
+7;Acoustic;Country Music7;Felt;5;5
+7;Acoustic;VideoGame3;Aluminium;3;5
+7;Acoustic;Knocking;Sandpaper;4;5
+7;Acoustic;Bell4;Wood;5;3
+7;Acoustic;Country Music7;Leather;6;5
+7;Acoustic;VideoGame3;Felt;4;5
+7;Acoustic;Knocking;Aluminium;4;4
+7;Acoustic;Bell4;Sandpaper;5;4
+7;Acoustic;CarHorn;Wood;3;7
+8;Acoustic;VideoGame3;Leather;3;8
+8;Acoustic;Knocking;Felt;6;7
+8;Acoustic;Bell4;Aluminium;4;6
+8;Acoustic;CarHorn;Sandpaper;3;8
+8;Acoustic;Country Music7;Wood;8;8
+8;Acoustic;Knocking;Leather;7;6
+8;Acoustic;Bell4;Felt;4;7
+8;Acoustic;CarHorn;Aluminium;2;8
+8;Acoustic;Country Music7;Sandpaper;7;8
+8;Acoustic;VideoGame3;Wood;4;7
+8;Acoustic;Bell4;Leather;6;7
+8;Acoustic;CarHorn;Felt;1;9
+8;Acoustic;Country Music7;Aluminium;8;8
+8;Acoustic;VideoGame3;Sandpaper;3;8
+8;Acoustic;Knocking;Wood;7;7
+8;Acoustic;CarHorn;Leather;2;9
+8;Acoustic;Country Music7;Felt;8;8
+8;Acoustic;VideoGame3;Aluminium;2;8
+8;Acoustic;Knocking;Sandpaper;7;6
+8;Acoustic;Bell4;Wood;6;8
+8;Acoustic;Country Music7;Leather;8;9
+8;Acoustic;VideoGame3;Felt;4;7
+8;Acoustic;Knocking;Aluminium;6;7
+8;Acoustic;Bell4;Sandpaper;7;8
+8;Acoustic;CarHorn;Wood;3;8
+9;Acoustic;VideoGame3;Leather;5;7
+9;Acoustic;Knocking;Felt;5;8
+9;Acoustic;Bell4;Aluminium;6;4
+9;Acoustic;CarHorn;Sandpaper;2;8
+9;Acoustic;Country Music7;Wood;8;8
+9;Acoustic;Knocking;Leather;5;7
+9;Acoustic;Bell4;Felt;3;7
+9;Acoustic;CarHorn;Aluminium;2;9
+9;Acoustic;Country Music7;Sandpaper;8;7
+9;Acoustic;VideoGame3;Wood;4;7
+9;Acoustic;Bell4;Leather;5;6
+9;Acoustic;CarHorn;Felt;2;8
+9;Acoustic;Country Music7;Aluminium;8;8
+9;Acoustic;VideoGame3;Sandpaper;5;5
+9;Acoustic;Knocking;Wood;5;7
+9;Acoustic;CarHorn;Leather;3;8
+9;Acoustic;Country Music7;Felt;7;7
+9;Acoustic;VideoGame3;Aluminium;5;7
+9;Acoustic;Knocking;Sandpaper;5;6
+9;Acoustic;Bell4;Wood;4;4
+9;Acoustic;Country Music7;Leather;7;6
+9;Acoustic;VideoGame3;Felt;5;7
+9;Acoustic;Knocking;Aluminium;5;4
+9;Acoustic;Bell4;Sandpaper;4;4
+9;Acoustic;CarHorn;Wood;3;8
+10;Acoustic;VideoGame3;Leather;3;7
+10;Acoustic;Knocking;Felt;5;4
+10;Acoustic;Bell4;Aluminium;3;6
+10;Acoustic;CarHorn;Sandpaper;1;9
+10;Acoustic;Country Music7;Wood;9;8
+10;Acoustic;Knocking;Leather;5;4
+10;Acoustic;Bell4;Felt;3;7
+10;Acoustic;CarHorn;Aluminium;2;7
+10;Acoustic;Country Music7;Sandpaper;9;7
+10;Acoustic;VideoGame3;Wood;3;7
+10;Acoustic;Bell4;Leather;3;6
+10;Acoustic;CarHorn;Felt;2;8
+10;Acoustic;Country Music7;Aluminium;8;7
+10;Acoustic;VideoGame3;Sandpaper;2;6
+10;Acoustic;Knocking;Wood;5;3
+10;Acoustic;CarHorn;Leather;1;8
+10;Acoustic;Country Music7;Felt;9;7
+10;Acoustic;VideoGame3;Aluminium;3;7
+10;Acoustic;Knocking;Sandpaper;5;3
+10;Acoustic;Bell4;Wood;3;5
+10;Acoustic;Country Music7;Leather;8;7
+10;Acoustic;VideoGame3;Felt;2;7
+10;Acoustic;Knocking;Aluminium;5;2
+10;Acoustic;Bell4;Sandpaper;4;4
+10;Acoustic;CarHorn;Wood;2;8
+1;Acoustic;Country Music7;None;8;7
+1;Acoustic;VideoGame3;None;4;4
+1;Acoustic;Knocking;None;8;3
+1;Acoustic;Bell4;None;5;6
+1;Acoustic;CarHorn;None;1;7
+1;Tactile;Leather;None;8;6
+1;Tactile;Felt;None;4;7
+1;Tactile;Aluminium;None;3;5
+1;Tactile;Sandpaper;None;2;4
+1;Tactile;Wood;None;6;2
+2;Acoustic;Country Music7;None;8;7
+2;Acoustic;VideoGame3;None;6;7
+2;Acoustic;Knocking;None;5;6
+2;Acoustic;Bell4;None;3;8
+2;Acoustic;CarHorn;None;2;8
+2;Tactile;Leather;None;8;8
+2;Tactile;Felt;None;7;7
+2;Tactile;Aluminium;None;8;7
+2;Tactile;Sandpaper;None;5;8
+2;Tactile;Wood;None;9;8
+3;Acoustic;Country Music7;None;8;7
+3;Acoustic;VideoGame3;None;3;3
+3;Acoustic;Knocking;None;3;5
+3;Acoustic;Bell4;None;5;3
+3;Acoustic;CarHorn;None;2;7
+3;Tactile;Leather;None;4;2
+3;Tactile;Felt;None;5;2
+3;Tactile;Aluminium;None;7;2
+3;Tactile;Sandpaper;None;3;3
+3;Tactile;Wood;None;6;2
+4;Acoustic;Country Music7;None;8;7
+4;Acoustic;VideoGame3;None;3;8
+4;Acoustic;Knocking;None;6;5
+4;Acoustic;Bell4;None;5;8
+4;Acoustic;CarHorn;None;3;6
+4;Tactile;Leather;None;6;6
+4;Tactile;Felt;None;4;7
+4;Tactile;Aluminium;None;7;6
+4;Tactile;Sandpaper;None;4;7
+4;Tactile;Wood;None;6;6
+5;Acoustic;Country Music7;None;8;4
+5;Acoustic;VideoGame3;None;6;6
+5;Acoustic;Knocking;None;7;6
+5;Acoustic;Bell4;None;5;3
+5;Acoustic;CarHorn;None;1;9
+5;Tactile;Leather;None;8;8
+5;Tactile;Felt;None;9;9
+5;Tactile;Aluminium;None;7;7
+5;Tactile;Sandpaper;None;5;7
+5;Tactile;Wood;None;7;4
+6;Acoustic;Country Music7;None;7;6
+6;Acoustic;VideoGame3;None;5;6
+6;Acoustic;Knocking;None;5;7
+6;Acoustic;Bell4;None;4;6
+6;Acoustic;CarHorn;None;2;8
+6;Tactile;Leather;None;8;6
+6;Tactile;Felt;None;6;5
+6;Tactile;Aluminium;None;8;6
+6;Tactile;Sandpaper;None;4;7
+6;Tactile;Wood;None;7;6
+7;Acoustic;Country Music7;None;7;6
+7;Acoustic;VideoGame3;None;4;5
+7;Acoustic;Knocking;None;4;3
+7;Acoustic;Bell4;None;5;5
+7;Acoustic;CarHorn;None;2;7
+7;Tactile;Leather;None;6;3
+7;Tactile;Felt;None;5;4
+7;Tactile;Aluminium;None;6;3
+7;Tactile;Sandpaper;None;4;5
+7;Tactile;Wood;None;5;3
+8;Acoustic;Country Music7;None;7;6
+8;Acoustic;VideoGame3;None;5;7
+8;Acoustic;Knocking;None;6;7
+8;Acoustic;Bell4;None;6;6
+8;Acoustic;CarHorn;None;3;8
+8;Tactile;Leather;None;6;6
+8;Tactile;Felt;None;5;6
+8;Tactile;Aluminium;None;7;5
+8;Tactile;Sandpaper;None;4;7
+8;Tactile;Wood;None;7;6
+9;Acoustic;Country Music7;None;8;7
+9;Acoustic;VideoGame3;None;4;6
+9;Acoustic;Knocking;None;6;8
+9;Acoustic;Bell4;None;5;3
+9;Acoustic;CarHorn;None;2;8
+9;Tactile;Leather;None;8;6
+9;Tactile;Felt;None;7;5
+9;Tactile;Aluminium;None;8;5
+9;Tactile;Sandpaper;None;4;6
+9;Tactile;Wood;None;7;4
+10;Acoustic;Country Music7;None;9;6
+10;Acoustic;VideoGame3;None;3;6
+10;Acoustic;Knocking;None;4;5
+10;Acoustic;Bell4;None;2;7
+10;Acoustic;CarHorn;None;1;9
+10;Tactile;Leather;None;3;5
+10;Tactile;Felt;None;5;4
+10;Tactile;Aluminium;None;4;5
+10;Tactile;Sandpaper;None;3;7
+10;Tactile;Wood;None;6;4
