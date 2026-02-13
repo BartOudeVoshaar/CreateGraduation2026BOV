@@ -1,0 +1,20 @@
+library(DescTools)
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+
+clean_data <- read_delim("E12_Wrangled.csv")
+
+#Visualise the data
+
+ggplot()+
+  geom_line(data = clean_data, mapping = aes(x = seq_len(nrow(clean_data)),y= SC_z), color = "blue")+
+  geom_line(data = clean_data, mapping = aes(x = seq_len(nrow(clean_data)),y= SR_z), color = "orange")+
+  labs(
+        title = "Lineplot SC vs PPG",
+        x = "Time",
+        y = "SR & SR"
+      ) +
+      theme_gray()
+# mean(clean_data$PPG)
+# Mode(clean_data$PPG)
