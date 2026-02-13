@@ -1,0 +1,26 @@
+library(tidyverse)
+library(ggplot2)
+library(readxl)
+library(dplyr)
+library(lmerTest)
+library(emmeans)
+library(sjPlot)
+library(parameters)
+library(writexl)
+library(merDeriv)
+library(readr)
+
+Total_Peaks <- read_delim("~/Universiteit documenten/Graduation Project/Experiment/Data/Analysis/Total Peaks.csv", 
+                          delim = ";", escape_double = FALSE, col_types = cols(Amplitude = col_number(), 
+                                                                               Index = col_integer(), Start = col_integer(), 
+                                                                               End = col_integer(), Timestamp = col_number(),
+                                                                               NumTrail = col_number()),
+                          trim_ws = TRUE)
+
+
+
+mean(Total_Peaks$NumTrail, na.rm = TRUE)
+sd(Total_Peaks$NumTrail, na.rm = TRUE)
+
+mean(Total_Peaks$Amplitude, na.rm = TRUE)
+sd(Total_Peaks$Amplitude, na.rm = TRUE)
