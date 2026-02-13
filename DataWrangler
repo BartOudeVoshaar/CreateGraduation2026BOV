@@ -1,0 +1,86 @@
+library(ggstatsplot)
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(e1071)
+
+
+my_data <- read_delim("E12_Raw.csv", 
+                          delim = ";", escape_double = FALSE, col_types = cols(Timestamp_Shimmer = col_number(), 
+                                                                               PPG_A13 = col_number(), Skin_Resistance = col_number(), 
+                                                                               Skin_Conductance = col_number()), 
+                          trim_ws = TRUE)
+Timestamp_Shimmer <- as.numeric(my_data$Timestamp_Shimmer)
+Skin_Conductance <- as.numeric(my_data$Skin_Conductance)
+
+#Clean the data
+clean_data <- my_data %>%
+  select(Timestamp_Shimmer, Skin_Conductance, Skin_Resistance, PPG_A13) %>%
+  rename(PPG = PPG_A13, SC = Skin_Conductance, SR = Skin_Resistance, time = Timestamp_Shimmer) %>% 
+  mutate(
+    
+    SR = if_else(SR >100, SR / 100, SR),
+    SR = if_else(SR >10, SR / 10, SR),
+    SR = if_else(SR < 0.1, SR * 100, SR),
+    SR = if_else(SR < 1, SR * 10, SR),
+    SR = if_else(SR < 1, SR * 10, SR),
+    
+    time = if_else(time < 4, time * 10, time),
+    time = if_else(time >11, time / 10, time),
+    time = if_else(time >11, time / 10, time),
+    time = if_else(time >11, time / 10, time),
+    time = if_else(time >11, time / 10, time),
+    time = if_else(time >11, time / 10, time),
+    time = if_else(time >11, time / 10, time),
+    time = if_else(time >11, time / 10, time),
+     
+    SC = if_else(SC >100, SC / 100, SC),
+    SC = if_else(SC >10, SC / 10, SC),
+    
+    PPG = if_else(PPG >100, PPG / 100, PPG),
+    PPG = if_else(PPG >10, PPG / 10, PPG),
+  )
+
+skewness(clean_data$SR, na.rm = TRUE)
+skewness(clean_data$SC, na.rm = TRUE)
+
+#Counteract Skewness
+skew_threshold <- 0.5
+clean_data <- clean_data %>%
+  mutate(
+    SR_transformed = case_when(
+      skewness(SR, na.rm = TRUE) > skew_threshold  ~ log(SR),
+      skewness(SR, na.rm = TRUE) < -skew_threshold ~ (max(SR, na.rm = TRUE) + 1 - SR),
+      TRUE ~ SR
+    ),
+    SC_transformed = case_when(
+      skewness(SC, na.rm = TRUE) > skew_threshold  ~ log(SC),        
+      skewness(SC, na.rm = TRUE) < -skew_threshold ~ (max(SC, na.rm = TRUE) + 1 - SC),
+      TRUE ~ SC
+    )
+  )
+
+skewness(clean_data$SR_transformed, na.rm = TRUE)
+skewness(clean_data$SC_transformed, na.rm = TRUE)
+
+# Identify the outliers via 1.5*IQR rule
+  remove_outliers <- function(x){
+    Q <- quantile(x, probs = c(.25, .75), na.rm = TRUE)
+    iqr <- IQR(x, na.rm = TRUE)
+    lower <- Q[1] - 1.5 * iqr
+    upper <- Q[2] + 1.5 * iqr
+    x > lower & x < upper
+  }
+  
+  clean_no_outliers <- clean_data %>%
+    dplyr::filter(
+      remove_outliers(PPG)&
+      remove_outliers(SC_transformed)&
+      remove_outliers(SR_transformed))%>%
+    mutate(
+        SC_z = as.numeric(scale(SC_transformed)),
+        SR_z = as.numeric(scale(SR_transformed))
+      )
+
+    write.csv(clean_no_outliers, "E12_Wrangled.csv", row.names = FALSE)
